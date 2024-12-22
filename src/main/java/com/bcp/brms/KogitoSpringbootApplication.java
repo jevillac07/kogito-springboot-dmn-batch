@@ -21,11 +21,14 @@ public class KogitoSpringbootApplication {
         String modelName = "Age";
         DMNModel dmnModel = dmnRuntime.getModel(namespace, modelName);
         DMNContext dmnContext = dmnRuntime.newContext();
-        dmnContext.set("Age", 15);
-        DMNResult dmnResult = dmnRuntime.evaluateAll(dmnModel, dmnContext);
 
-        for(DMNDecisionResult dr : dmnResult.getDecisionResults()) {
-            System.out.println("Age: 15 - Decision: " + dr.getDecisionName() + " - Result: " + dr.getResult());
+        for(String arg : args) {
+            dmnContext.set("Age", Integer.parseInt(arg));
+            DMNResult dmnResult = dmnRuntime.evaluateAll(dmnModel, dmnContext);
+
+            for(DMNDecisionResult dr : dmnResult.getDecisionResults()) {
+                System.out.println("Age: " + arg + " - Decision: " + dr.getDecisionName() + " - Result: " + dr.getResult());
+            }
         }
     }
 }
