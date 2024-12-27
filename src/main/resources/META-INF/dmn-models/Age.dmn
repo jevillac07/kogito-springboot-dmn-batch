@@ -19,7 +19,7 @@
     </dmn:informationRequirement>
     <dmn:decisionTable id="_B88BA4F3-94F4-46D2-B731-0EA5FF15F50A" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_84B52B1F-0B18-4DBC-A6EE-06B09F5131F0">
-        <dmn:inputExpression typeRef="age">
+        <dmn:inputExpression id="_2196CA08-963E-4902-A21D-5E438DBA6A6A" typeRef="age">
           <dmn:text>Age</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
